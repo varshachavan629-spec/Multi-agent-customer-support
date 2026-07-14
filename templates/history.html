@@ -1,0 +1,175 @@
+{% extends "base.html" %}
+
+{% block title %}
+Conversation History
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/history.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+
+    <h2 class="mb-4">
+        <i class="fas fa-history"></i>
+        Conversation History
+    </h2>
+
+    <!-- Search -->
+    <div class="mb-4">
+        <input
+            type="text"
+            class="form-control"
+            placeholder="Search conversations..."
+        >
+    </div>
+
+    <!-- History Table -->
+    <div class="table-responsive">
+
+        <table class="table table-bordered table-hover align-middle">
+
+            <thead class="table-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>Date & Time</th>
+                    <th>User Query</th>
+                    <th>Agent</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+            {% if conversations %}
+
+                {% for chat in conversations %}
+
+                <tr>
+
+                    <!-- ID -->
+                    <td>{{ chat[0] }}</td>
+
+                    <!-- Timestamp -->
+                    <td>{{ chat[6] }}</td>
+
+                    <!-- User Message -->
+                    <td>{{ chat[2] }}</td>
+
+                    <!-- Agent -->
+                    <td>
+                        <span class="badge bg-primary">
+                            {{ chat[3] }}
+                        </span>
+                    </td>
+
+                    <!-- Status -->
+                    <td>
+                        {% if chat[5] == "Completed" %}
+                            <span class="badge bg-success">
+                                {{ chat[5] }}
+                            </span>
+                        {% else %}
+                            <span class="badge bg-warning text-dark">
+                                {{ chat[5] }}
+                            </span>
+                        {% endif %}
+                    </td>
+
+                    <!-- Action -->
+                    <td>
+                        <button
+                            class="btn btn-primary btn-sm"
+                            data-bs-toggle="modal"
+                            data-bs-target="#historyModal{{ chat[0] }}"
+                        >
+                            View
+                        </button>
+
+                        <!-- Modal -->
+                        <div class="modal fade"
+                             id="historyModal{{ chat[0] }}"
+                             tabindex="-1">
+
+                            <div class="modal-dialog modal-lg">
+
+                                <div class="modal-content">
+
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">
+                                            Conversation #{{ chat[0] }}
+                                        </h5>
+
+                                        <button
+                                            type="button"
+                                            class="btn-close"
+                                            data-bs-dismiss="modal">
+                                        </button>
+                                    </div>
+
+                                    <div class="modal-body">
+
+                                        <p>
+                                            <strong>Date:</strong>
+                                            {{ chat[6] }}
+                                        </p>
+
+                                        <p>
+                                            <strong>Session ID:</strong><br>
+                                            <small>{{ chat[1] }}</small>
+                                        </p>
+
+                                        <hr>
+
+                                        <p>
+                                            <strong>User:</strong><br>
+                                            {{ chat[2] }}
+                                        </p>
+
+                                        <hr>
+
+                                        <p>
+                                            <strong>AI Response:</strong><br>
+                                            {{ chat[4] }}
+                                        </p>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </td>
+
+                </tr>
+
+                {% endfor %}
+
+            {% else %}
+
+                <tr>
+                    <td colspan="6" class="text-center">
+                        No conversations found.
+                    </td>
+                </tr>
+
+            {% endif %}
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/history.js') }}"></script>
+{% endblock %}

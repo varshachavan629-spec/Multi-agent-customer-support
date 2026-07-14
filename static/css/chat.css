@@ -1,0 +1,145 @@
+/* ===============================
+   Chat Container
+================================= */
+
+.chat-container {
+    max-width: 900px;
+    margin: 30px auto;
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* ===============================
+   Chat Header
+================================= */
+
+.chat-header {
+    background: #0d6efd;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.chat-header h3 {
+    margin: 0;
+    font-weight: bold;
+}
+
+.chat-header p {
+    margin-top: 8px;
+    font-size: 14px;
+}
+
+/* ===============================
+   Chat Box
+================================= */
+
+.chat-box {
+    height: 500px;
+    padding: 20px;
+    overflow-y: auto;
+    background: #f5f7fa;
+}
+
+/* ===============================
+   Message
+================================= */
+
+.message {
+    display: flex;
+    margin-bottom: 15px;
+}
+
+.message-content {
+    max-width: 70%;
+    padding: 12px 18px;
+    border-radius: 15px;
+    line-height: 1.6;
+    font-size: 15px;
+}
+
+/* ===============================
+   Bot Message
+================================= */
+
+.bot-message {
+    justify-content: flex-start;
+}
+
+.bot-message .message-content {
+    background: #e9ecef;
+    color: #333;
+}
+
+/* ===============================
+   User Message
+================================= */
+
+.user-message {
+    justify-content: flex-end;
+}
+
+.user-message .message-content {
+    background: #0d6efd;
+    color: white;
+}
+
+/* ===============================
+   Chat Input
+================================= */
+
+.chat-input {
+    display: flex;
+    padding: 15px;
+    background: #ffffff;
+    border-top: 1px solid #ddd;
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    outline: none;
+    font-size: 15px;
+}
+
+.chat-input input:focus {
+    border-color: #0d6efd;
+}
+
+.chat-input button {
+    margin-left: 10px;
+    padding: 12px 20px;
+    background: #0d6efd;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.chat-input button:hover {
+    background: #0b5ed7;
+}
+
+/* ===============================
+   Responsive
+================================= */
+
+@media (max-width: 768px) {
+
+    .chat-container {
+        margin: 15px;
+    }
+
+    .chat-box {
+        height: 400px;
+    }
+
+    .message-content {
+        max-width: 90%;
+    }
+}

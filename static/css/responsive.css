@@ -1,0 +1,167 @@
+/* ==========================================
+   Large Tablets
+========================================== */
+
+@media (max-width: 992px) {
+
+    .hero h1,
+    .about-hero h1 {
+        font-size: 34px;
+    }
+
+    .hero p,
+    .about-hero p {
+        font-size: 16px;
+    }
+
+    .workflow-box {
+        width: 90%;
+    }
+
+}
+
+/* ==========================================
+   Tablets
+========================================== */
+
+@media (max-width: 768px) {
+
+    body {
+        font-size: 15px;
+    }
+
+    .navbar-brand {
+        font-size: 20px;
+    }
+
+    .hero,
+    .about-hero {
+        padding: 40px 20px;
+    }
+
+    .hero h1,
+    .about-hero h1 {
+        font-size: 30px;
+    }
+
+    .hero p,
+    .about-hero p {
+        font-size: 15px;
+    }
+
+    .feature-card,
+    .dashboard-card,
+    .about-card,
+    .contact-card,
+    .tech-card {
+
+        margin-bottom: 20px;
+
+    }
+
+    .chat-container {
+
+        margin: 10px;
+
+    }
+
+    .chat-box {
+
+        height: 400px;
+
+    }
+
+    .workflow-box {
+
+        width: 100%;
+
+    }
+
+}
+
+/* ==========================================
+   Mobile
+========================================== */
+
+@media (max-width: 576px) {
+
+    .hero h1,
+    .about-hero h1 {
+
+        font-size: 26px;
+
+    }
+
+    .hero p,
+    .about-hero p {
+
+        font-size: 14px;
+
+    }
+
+    .chat-header h3 {
+
+        font-size: 20px;
+
+    }
+
+    .message-content {
+
+        max-width: 90%;
+
+        font-size: 14px;
+
+    }
+
+    .chat-input {
+
+        flex-direction: column;
+
+    }
+
+    .chat-input input {
+
+        width: 100%;
+        margin-bottom: 10px;
+
+    }
+
+    .chat-input button {
+
+        width: 100%;
+        margin-left: 0;
+
+    }
+
+    .dashboard-icon {
+
+        font-size: 35px;
+
+    }
+
+    .feature-icon {
+
+        font-size: 35px;
+
+    }
+
+    .tech-card i {
+
+        font-size: 35px;
+
+    }
+
+    .workflow-box {
+
+        font-size: 14px;
+        padding: 12px;
+
+    }
+
+    footer {
+
+        font-size: 14px;
+
+    }
+
+}

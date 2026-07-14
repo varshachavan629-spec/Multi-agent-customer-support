@@ -1,0 +1,19 @@
+.dashboard-card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-5px);
+}
+
+.dashboard-icon {
+    font-size: 40px;
+    color: #0d6efd;
+}
+
+.card-header {
+    font-weight: bold;
+}

@@ -1,0 +1,112 @@
+{% extends "base.html" %}
+
+{% block title %}
+My Tickets
+{% endblock %}
+
+{% block content %}
+
+<div class="container py-5">
+
+    <h2 class="mb-4">
+        <i class="fas fa-ticket-alt"></i>
+        My Support Tickets
+    </h2>
+
+    <form method="GET" action="/my-tickets" class="mb-4">
+
+    <div class="input-group">
+
+        <input
+            type="text"
+            class="form-control"
+            name="ticket_id"
+            placeholder="Search by Ticket ID (e.g. TKT123456)"
+            value="{{ ticket_id or '' }}">
+
+        <button class="btn btn-primary" type="submit">
+            <i class="fas fa-search"></i> Search
+        </button>
+
+        <a href="/my-tickets" class="btn btn-secondary">
+            Clear
+        </a>
+
+    </div>
+
+</form>
+
+    {% if tickets %}
+
+    <table class="table table-bordered table-striped">
+
+        <thead class="table-dark">
+            <tr>
+                <th>Ticket ID</th>
+                <th>Subject</th>
+                <th>Status</th>
+                <th>Created At</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+        {% for ticket in tickets %}
+
+            <tr>
+
+                <td>{{ ticket[1] }}</td>
+
+                <td>{{ ticket[4] }}</td>
+
+                <td>
+                    {% if ticket[6] == "Open" %}
+                        <span class="badge bg-warning">{{ ticket[6] }}</span>
+
+                    {% elif ticket[6] == "In Progress" %}
+                        <span class="badge bg-primary">{{ ticket[6] }}</span>
+
+                    {% else %}
+                        <span class="badge bg-success">{{ ticket[6] }}</span>
+
+                    {% endif %}
+                </td>
+
+                <td>{{ ticket[7] }}</td>
+
+            </tr>
+
+        {% endfor %}
+
+        </tbody>
+
+    </table>
+
+    {% else %}
+
+<div class="alert alert-warning text-center">
+
+    {% if ticket_id %}
+
+        <h5>No ticket found!</h5>
+
+        <p>
+            No ticket exists with Ticket ID
+            <strong>{{ ticket_id }}</strong>.
+        </p>
+
+    {% else %}
+
+        <h5>No Tickets Available</h5>
+
+        <p>You haven't created any support tickets yet.</p>
+
+    {% endif %}
+
+</div>
+
+{% endif %}
+
+</div>
+
+{% endblock %}

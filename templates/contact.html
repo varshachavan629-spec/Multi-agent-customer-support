@@ -1,0 +1,173 @@
+{% extends "base.html" %}
+
+{% block title %}
+Contact
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/contact.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<div class="container py-5">
+
+    <div class="text-center mb-5">
+
+        <h1>
+            <i class="fas fa-envelope"></i>
+            Contact Us
+        </h1>
+
+        <p class="lead">
+            We'd love to hear from you. Send us your questions or feedback.
+        </p>
+
+    </div>
+
+    <div class="row">
+
+        <!-- Contact Information -->
+        <div class="col-lg-5">
+
+            <div class="card contact-card mb-4">
+
+                <div class="card-body">
+
+                    <h3>Contact Information</h3>
+
+                    <hr>
+
+                    <p>
+                        <i class="fas fa-map-marker-alt"></i>
+                        Bangalore, Karnataka
+                    </p>
+
+                    <p>
+                        <i class="fas fa-phone"></i>
+                        +91 XXXXX XXXXX
+                    </p>
+
+                    <p>
+                        <i class="fas fa-envelope"></i>
+                        support@example.com
+                    </p>
+
+                    <p>
+                        <i class="fas fa-clock"></i>
+                        Mon - Fri : 9:00 AM - 6:00 PM
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="card contact-card">
+
+                <div class="card-body text-center">
+
+                    <h4>Follow Us</h4>
+
+                    <div class="social-icons">
+
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Contact Form -->
+        <div class="col-lg-7">
+
+            <div class="card contact-card">
+
+                <div class="card-body">
+
+                    <h3>Send Message</h3>
+
+                    <form action="{{ url_for('contact') }}" method="POST">
+
+                        <div class="mb-3">
+
+                            <label>Name</label>
+
+                            <input
+                                type="text"
+                                name="name"
+                                class="form-control"
+                                placeholder="Enter your name"
+                                required>
+
+                        </div>
+
+                        <div class="mb-3">
+
+                            <label>Email</label>
+
+                            <input
+                                type="email"
+                                name="email"
+                                class="form-control"
+                                placeholder="Enter your email"
+                                required>
+
+                        </div>
+
+                        <div class="mb-3">
+
+                            <label>Subject</label>
+
+                            <input
+                                type="text"
+                                name="subject"
+                                class="form-control"
+                                placeholder="Enter subject"
+                                required>
+
+                        </div>
+
+                        <div class="mb-3">
+
+                            <label>Message</label>
+
+                            <textarea
+                                name="message"
+                                class="form-control"
+                                rows="5"
+                                placeholder="Write your message..."
+                                required></textarea>
+
+                        </div>
+
+                        <button
+                            class="btn btn-primary w-100"
+                            type="submit">
+
+                            Send Message
+
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/contact.js') }}"></script>
+{% endblock %}

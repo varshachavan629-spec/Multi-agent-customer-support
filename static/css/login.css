@@ -1,0 +1,38 @@
+body {
+    background-color: #f4f6f9;
+}
+
+.card {
+    border: none;
+    border-radius: 12px;
+}
+
+.card-body {
+    padding: 40px;
+}
+
+h2 {
+    font-weight: bold;
+    color: #0d6efd;
+}
+
+.form-label {
+    font-weight: 600;
+}
+
+.form-control,
+.form-select {
+    height: 45px;
+    border-radius: 8px;
+}
+
+.btn {
+    height: 45px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.card {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}

@@ -1,0 +1,184 @@
+{% extends "base.html" %}
+
+{% block title %}
+Dashboard
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+
+    <h2 class="mb-4">
+        <i class="fas fa-chart-line"></i>
+        Dashboard
+    </h2>
+
+    <!-- Row 1 -->
+
+    <div class="row">
+
+        <div class="col-md-4 mb-4">
+            <div class="card dashboard-card">
+                <div class="card-body text-center">
+                    <i class="fas fa-comments dashboard-icon"></i>
+                    <h5 class="mt-3">Total Conversations</h5>
+                    <h2>{{ total }}</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <div class="card dashboard-card">
+                <div class="card-body text-center">
+                    <i class="fas fa-credit-card dashboard-icon"></i>
+                    <h5 class="mt-3">Billing Queries</h5>
+                    <h2>{{ billing }}</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <div class="card dashboard-card">
+                <div class="card-body text-center">
+                    <i class="fas fa-tools dashboard-icon"></i>
+                    <h5 class="mt-3">Technical Queries</h5>
+                    <h2>{{ technical }}</h2>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Row 2 -->
+
+    <div class="row">
+
+        <div class="col-md-4 mb-4">
+            <div class="card dashboard-card">
+                <div class="card-body text-center">
+                    <i class="fas fa-user dashboard-icon"></i>
+                    <h5 class="mt-3">Account Queries</h5>
+                    <h2>{{ account }}</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <div class="card dashboard-card">
+                <div class="card-body text-center">
+                    <i class="fas fa-question-circle dashboard-icon"></i>
+                    <h5 class="mt-3">General Queries</h5>
+                    <h2>{{ general }}</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <div class="card dashboard-card">
+                <div class="card-body text-center">
+                    <i class="fas fa-exclamation-triangle dashboard-icon"></i>
+                    <h5 class="mt-3">Escalated Queries</h5>
+                    <h2>{{ escalation }}</h2>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Row 3 : Ticket Analytics -->
+
+    <div class="row">
+
+        <div class="col-md-4 mb-4">
+            <div class="card dashboard-card">
+                <div class="card-body text-center">
+                    <i class="fas fa-folder-open dashboard-icon"></i>
+                    <h5 class="mt-3">Open Tickets</h5>
+                    <h2>{{ open_tickets }}</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <div class="card dashboard-card">
+                <div class="card-body text-center">
+                    <i class="fas fa-spinner dashboard-icon"></i>
+                    <h5 class="mt-3">In Progress</h5>
+                    <h2>{{ in_progress }}</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <div class="card dashboard-card">
+                <div class="card-body text-center">
+                    <i class="fas fa-check-circle dashboard-icon"></i>
+                    <h5 class="mt-3">Resolved Tickets</h5>
+                    <h2>{{ resolved }}</h2>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Recent Activity -->
+
+    <div class="card mt-4">
+
+        <div class="card-header">
+            Recent Activity
+        </div>
+
+        <div class="card-body">
+
+            {% if recent %}
+
+            <table class="table">
+
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>User Query</th>
+                        <th>Agent</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    {% for row in recent %}
+
+                    <tr>
+                        <td>{{ row[0] }}</td>
+                        <td>{{ row[1] }}</td>
+                        <td>{{ row[2] }}</td>
+                        <td>{{ row[3] }}</td>
+                    </tr>
+
+                    {% endfor %}
+
+                </tbody>
+
+            </table>
+
+            {% else %}
+
+            <p>No conversations available yet.</p>
+
+            {% endif %}
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+{% endblock %}

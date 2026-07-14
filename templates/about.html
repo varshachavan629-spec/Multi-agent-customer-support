@@ -1,0 +1,308 @@
+{% extends "base.html" %}
+
+{% block title %}
+About
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<!-- Hero Section -->
+<section class="about-hero">
+
+    <h1>
+        <i class="fas fa-robot"></i>
+        Multi-Agent Customer Support System
+    </h1>
+
+    <p>
+        AI-powered customer support using Flask, LangGraph, Groq and SQLite.
+    </p>
+
+</section>
+
+<!-- Project Overview -->
+
+<section class="about-section">
+
+    <div class="card about-card">
+
+        <div class="card-body">
+
+            <h2>Project Overview</h2>
+
+            <p>
+
+                This project is an AI-powered customer support platform that
+                automatically understands customer queries, routes them to the
+                correct specialist AI agent, stores conversations, and provides
+                intelligent responses using Large Language Models.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Key Features -->
+
+<section class="about-section">
+
+    <h2 class="section-title">
+
+        Key Features
+
+    </h2>
+
+    <div class="row">
+
+        <div class="col-md-3">
+
+            <div class="card feature-card">
+
+                <div class="card-body text-center">
+
+                    <i class="fas fa-route feature-icon"></i>
+
+                    <h5>Intent Routing</h5>
+
+                    <p>Automatically routes queries to the correct AI agent.</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-3">
+
+            <div class="card feature-card">
+
+                <div class="card-body text-center">
+
+                    <i class="fas fa-comments feature-icon"></i>
+
+                    <h5>AI Agents</h5>
+
+                    <p>Billing, Technical, Account and General Support.</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-3">
+
+            <div class="card feature-card">
+
+                <div class="card-body text-center">
+
+                    <i class="fas fa-database feature-icon"></i>
+
+                    <h5>Memory</h5>
+
+                    <p>Stores conversation history using SQLite.</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-3">
+
+            <div class="card feature-card">
+
+                <div class="card-body text-center">
+
+                    <i class="fas fa-chart-line feature-icon"></i>
+
+                    <h5>Dashboard</h5>
+
+                    <p>View conversation statistics and analytics.</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Technology Stack -->
+
+<section class="about-section">
+
+    <h2 class="section-title">
+
+        Technology Stack
+
+    </h2>
+
+    <div class="row">
+
+        <div class="col-md-2">
+
+            <div class="tech-card">
+
+                <i class="fab fa-python"></i>
+
+                <p>Python</p>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-2">
+
+            <div class="tech-card">
+
+                <i class="fas fa-server"></i>
+
+                <p>Flask</p>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-2">
+
+            <div class="tech-card">
+
+                <i class="fas fa-project-diagram"></i>
+
+                <p>LangGraph</p>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-2">
+
+            <div class="tech-card">
+
+                <i class="fas fa-brain"></i>
+
+                <p>Groq</p>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-2">
+
+            <div class="tech-card">
+
+                <i class="fas fa-database"></i>
+
+                <p>SQLite</p>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-2">
+
+            <div class="tech-card">
+
+                <i class="fas fa-file-csv"></i>
+
+                <p>CSV</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Workflow -->
+
+<section class="about-section">
+
+    <h2 class="section-title">
+
+        System Workflow
+
+    </h2>
+
+    <div class="workflow">
+
+        <div class="workflow-box">User Query</div>
+
+        <div class="arrow">↓</div>
+
+        <div class="workflow-box">Triage Agent</div>
+
+        <div class="arrow">↓</div>
+
+        <div class="workflow-box">
+
+            Billing / Technical / Account / General Agent
+
+        </div>
+
+        <div class="arrow">↓</div>
+
+        <div class="workflow-box">
+
+            Escalation Agent (If Required)
+
+        </div>
+
+        <div class="arrow">↓</div>
+
+        <div class="workflow-box success">
+
+            Final Response
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Future Scope -->
+
+<section class="about-section">
+
+    <div class="card about-card">
+
+        <div class="card-body">
+
+            <h2>Future Enhancements</h2>
+
+            <ul>
+
+                <li>Voice-based customer support</li>
+
+                <li>Multilingual conversations</li>
+
+                <li>RAG-based knowledge retrieval</li>
+
+                <li>Sentiment Analysis</li>
+
+                <li>Human handoff with live agents</li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/about.js') }}"></script>
+{% endblock %}

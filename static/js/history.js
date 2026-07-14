@@ -1,0 +1,1 @@
+console.log("History Page Loaded");
