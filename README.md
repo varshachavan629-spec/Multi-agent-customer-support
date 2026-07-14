@@ -398,7 +398,3 @@ Python | Flask | Machine Learning | Generative AI | LangChain | LangGraph
 # 📄 License
 
 This project is developed for educational and learning purposes.
-=======
-# Multi-agent-customer-support
-MultiAgent AI Customer Support is an AI-powered customer support system built with Python, Flask, LangChain, LangGraph, Groq LLM, and SQLite. It intelligently routes customer queries to specialized AI agents, answers using a CSV knowledge base or Groq LLM, stores conversation history, and includes separate User and Admin portals.
->>>>>>> 7d5b7c085decf10f5fe56abb87b79db26e68d4b9
