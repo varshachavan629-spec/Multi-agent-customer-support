@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # 🤖 MultiAgent AI Customer Support
 
 MultiAgent AI Customer Support is an AI-powered customer support system built using **Python**, **Flask**, **LangChain**, **LangGraph**, **Groq LLM**, and **SQLite**. The application intelligently routes customer queries to specialized AI agents, retrieves answers from a CSV-based knowledge base, falls back to the Groq LLM when needed, stores conversation history, and provides a complete support ticket management system with separate User and Admin portals.
